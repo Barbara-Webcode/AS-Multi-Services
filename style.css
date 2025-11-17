@@ -1,1 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
 
+:root {
+  --Color1: rgb(75, 148, 19);
+  --color2: rgb(78, 91, 83);
+  --color3: ;
+  --color4: ;
+}
+/* Body */
+Body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+a {
+  /*text decoration none :  Pour enlever le surlignage de l'ancrage <a> bien se mettre dans le a comme parent sinon ca ne fonctionne pas */
+  text-decoration: none;
+}
+li {
+  /* List style none : Pour enlever les boules devant les listes*/
+  list-style: none;
+}
+
+/* Header et navigation */
+header {
+  min-height: 10vh;
+  font-weight: bold;
+}
+
+.navbar {
+  font-size: 2.2rem;
+  position: fixed;
+  display: flex;
+  width: 100%;
+}
+.navbar a {
+  color: var(--Color1);
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.nav-links {
+  display: flex;
+  /* Margin left auto:Pour pousser les éléments vers la droite */
+  margin-left: auto;
+  margin-top: 30px;
+  margin-right: 40px;
+}
+.nav-links li {
+  font-size: 1.4rem;
+}
+.logo {
+  color: var(--Color1);
+}
+
+.logo span {
+  color: var(--color2);
+}
+
+/* Partie Accueil */
+.accueil {
+  background: url(./assets/img/Andy.webp) 0 56% / cover;
+  margin-top: 40px; /* Pour laisser la place a la partie navigation quand ca defile */
+  height: 80vh;
+  width: 100%;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.acc-title {
+  font-size: 3rem;
+  margin: 12px;
+}
+.acc-text {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 25px auto;
+}
+.acc-btn {
+  margin: 12px;
+}
