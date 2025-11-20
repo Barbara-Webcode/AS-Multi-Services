@@ -5,9 +5,9 @@
 }
 
 :root {
-  --Color1: rgb(75, 148, 19);
+  --color1: rgb(75, 148, 19);
   --color2: rgb(78, 91, 83);
-  --color3: ;
+  --color3: rgb(144, 167, 144);
   --color4: ;
 }
 /* Body */
@@ -25,30 +25,35 @@ li {
 
 /* Header et navigation */
 header {
-  min-height: 10vh;
   font-weight: bold;
 }
-
+.container-nav {
+  min-height: 12vh;
+}
 .navbar {
-  font-size: 2.2rem;
   position: fixed;
+  font-size: 2.2rem;
   display: flex;
   width: 100%;
+  background: white;
+  z-index: 3; /* la bar de naviguation reste en 1er plan */
 }
 .navbar a {
-  color: var(--Color1);
-  margin-top: 20px;
-  margin-left: 30px;
+  color: var(--color1);
+  margin: 26px 27px;
 }
 .nav-links {
   display: flex;
-  /* Margin left auto:Pour pousser les éléments vers la droite */
   margin-left: auto;
   margin-top: 30px;
   margin-right: 40px;
 }
 .nav-links li {
   font-size: 1.4rem;
+}
+
+.nav-links :hover {
+  transform: scale(1.2);
 }
 .logo {
   color: var(--Color1);
@@ -61,7 +66,7 @@ header {
 /* Partie Accueil */
 .accueil {
   background: url(./assets/img/Andy.webp) 0 56% / cover;
-  margin-top: 40px; /* Pour laisser la place a la partie navigation quand ca defile */
+  margin-top: 27px;
   height: 80vh;
   width: 100%;
   border-radius: 12px;
@@ -71,15 +76,55 @@ header {
   flex-direction: column;
 }
 
+.card {
+  background: rgba(0, 27, 0, 0.5);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  text-align: center;
+  color: var(--color3);
+  width: 67%;
+}
+
 .acc-title {
   font-size: 3rem;
   margin: 12px;
+  text-shadow: -3px 3px 4px black;
 }
 .acc-text {
   font-size: 1.2rem;
   text-align: center;
   margin: 25px auto;
+  text-shadow: -3px 2px 4px black;
 }
 .acc-btn {
   margin: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.acc-btn a {
+  padding: 0 20px;
+  color: var(--color3);
+  border: solid 1px;
+  border-radius: 32px;
+  margin: 0 15px;
+  backdrop-filter: blur(3px);
+}
+.acc-btn a:hover {
+  transform: scale(1.1);
+  color: var(--color1);
+}
+
+/* Section Services */
+section {
+  height: 50vh;
+}
+.service-texte {
+  color: var(--color2);
+  text-align: center;
+}
+
+.service-texte h2 {
+  font-size: 2.4rem;
+  margin-top: 30px;
 }
