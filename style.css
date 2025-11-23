@@ -68,7 +68,6 @@ header {
   background: url(./assets/img/Andy.webp) 0 56% / cover;
   margin-top: 40px;
   height: 80vh;
-  width: 100%;
   border-radius: 12px 12px 0 0;
   display: flex;
   justify-content: center;
@@ -116,31 +115,29 @@ header {
 }
 
 /* Section Services */
-section {
+section.services {
   min-height: 115vh;
   background-color: var(--color4);
 }
-.service-texte h2 {
+.service-title h2 {
   font-size: 2.4rem;
   padding-top: 40px;
 }
 
-.service-texte {
+.service-title {
   color: var(--color2);
   text-align: center;
 }
 
-.service-texte span {
+.service-title span {
   font-weight: 600;
 }
 
 .service-grid-container {
   display: grid;
-  width: 90%;
-  max-width: 1200px; /* Largeur maximale */
-  grid-template-columns: 13% 32% 13% 32%;
-  gap: 16px 10px;
   margin: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 .service-grid-container::before {
   content: "";
@@ -153,16 +150,17 @@ section {
   left: 4%;
   z-index: -1;
 }
-.card-service {
+
+.service-card {
+  border: 2px solid black;
+  border-radius: 15px;
+  overflow: hidden; /* les coins arrondi de la border radius ne s'afficher pas car les enfant le p était trop grand */
 }
 .service-icon {
-  border: solid 2px;
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  color: var(--color1);
-  font-size: 3rem;
-  display: grid;
+  height: 120px;
+  color: rgb(4, 87, 4);
+  font-size: 4rem;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--color4);
@@ -170,15 +168,20 @@ section {
 }
 
 .service-content {
-  border: solid 2px;
-  width: 500px;
-  height: 100px;
-  border-radius: 12px;
+  height: 130px;
   color: var(--color2);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   background-color: rgb(250, 250, 250);
   box-shadow: -3px 4px 2px black;
-  align-items: center;
+  justify-content: flex-start;
+
   font-size: 1rem;
+}
+
+.service-content h3 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 8px;
 }
