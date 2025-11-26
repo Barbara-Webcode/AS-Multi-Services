@@ -180,7 +180,8 @@ section.services {
 
 /* A propos */
 
-.présentation {
+.presentation {
+  display: grid;
   height: 100vh;
   background-color: rgba(0, 255, 255, 0.171);
   text-align: center;
@@ -192,14 +193,11 @@ section.services {
 
 .grid-entreprise {
   display: grid;
-  grid-template-columns: 10% 30% 30% 30%;
-  max-width: 100vw;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  max-width: 50%;
+  height: auto;
 }
-.img-entreprise {
-  width: 100%;
-  height: 100px;
-  object-fit: cover; /* recadrer l'image sans la déformer , garde les proportions*/
-  object-position: center;
+
 
   loading: lazy; /* Chargement différé */
   background: #f0f0f0; /* Couleur de fond pendant le chargement */
