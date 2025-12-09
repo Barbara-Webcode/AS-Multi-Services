@@ -179,29 +179,64 @@ section.services {
 }
 
 /* A propos */
-
 .presentation {
-  display: grid;
-  height: 100vh;
-  background-color: rgba(0, 255, 255, 0.171);
   text-align: center;
 }
-.présentation h2 {
+.presentation h2 {
   font-size: 2.4rem;
-  padding: 40px;
+  color: var(--color2);
+}
+.presentation span {
+  font-weight: 600;
 }
 
 .grid-entreprise {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  max-width: 50%;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "img0 img1 img2 img3 "
+    ". info1 info1 info1"
+    "img4 img5 img6 img7"
+    "info2 info2 info3 info3";
+}
+
+.presentation-paragraphe {
+  text-align: center;
+  margin: 20px 0;
+}
+.grid-entreprise img {
+  border-radius: 4px;
+  max-width: 99%;
   height: auto;
+  object-fit: contain;
+}
+.img-sdb0 {
+  grid-area: img0;
+  margin-left: 10px;
+}
+.img-sdb1 {
+  grid-area: img1;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+.img-sdb2 {
+  grid-area: img2;
+  margin-left: 30px;
+}
+.img-sdb3 {
+  grid-area: img3;
+
+  margin-top: 30px;
+}
+.info-photo {
+  grid-area: info1;
 }
 
+loading: lazy; /* Chargement différé */
+background: #f0f0f0; /* Couleur de fond pendant le chargement */
 
-  loading: lazy; /* Chargement différé */
-  background: #f0f0f0; /* Couleur de fond pendant le chargement */
-}
 /* Contact */
 .map {
   margin: 30px;
