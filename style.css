@@ -75,7 +75,6 @@ header {
   align-items: center;
   flex-direction: column;
   clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
-  clip-path: polygon();
 }
 
 .card {
@@ -119,8 +118,14 @@ header {
 
 /* Section Services */
 section.services {
-  min-height: 103vh;
+  min-height: 115vh;
   background-color: rgb(243, 243, 243);
+  clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+  background-image: linear-gradient(
+    to top,
+    rgb(231, 231, 231) 0%,
+    rgb(243, 243, 243) 100%
+  );
 }
 
 .service-title h2 {
@@ -183,55 +188,113 @@ section.services {
   text-align: center;
 }
 .presentation h2 {
+  margin-top: 20px;
   font-size: 2.4rem;
   color: var(--color2);
 }
 .presentation span {
   font-weight: 600;
 }
+.presentation-paragraphe {
+  border: 1px solid black;
+  max-width: 700px;
+
+  margin: 30px auto 20px auto;
+  border-radius: 4px;
+  box-shadow: 0 0 7px black;
+  padding: 17px;
+}
 
 .grid-entreprise {
   display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto auto;
+  max-width: 100%;
+  grid-template-columns: 1fr 1fr 30px 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
-    "img0 img1 img2 img3 "
-    ". info1 info1 info1"
-    "img4 img5 img6 img7"
-    "info2 info2 info3 info3";
+    "img0 img1 . img2 img3"
+    "com1 com1 com1 com1 com1"
+    "img4 img5 . img6 img7"
+    "com2 com2 . com3 com3"
+    "img8 img9 . . ."
+    "com4 com4 . . .";
+  margin-top: 50px;
 }
 
-.presentation-paragraphe {
-  text-align: center;
-  margin: 20px 0;
-}
 .grid-entreprise img {
-  border-radius: 4px;
-  max-width: 99%;
-  height: auto;
-  object-fit: contain;
+  border-radius: 5px;
+  max-width: 100%;
+  height: 366px;
+  position: relative;
+  object-fit: cover;
+  display: block; /* evite l'espace blanc sous les img */
+  box-shadow: 0 0 6px rgb(100, 100, 100);
 }
+
+/* 1er ligne */
 .img-sdb0 {
   grid-area: img0;
-  margin-left: 10px;
+  transform: translateX(28px) translateY(-14px);
 }
 .img-sdb1 {
   grid-area: img1;
-  margin-top: 30px;
-  margin-right: 20px;
 }
 .img-sdb2 {
   grid-area: img2;
-  margin-left: 30px;
 }
+
 .img-sdb3 {
   grid-area: img3;
-
-  margin-top: 30px;
+  transform: translateX(-28px) translateY(-14px);
+  position: relative;
+  z-index: -1;
 }
-.info-photo {
-  grid-area: info1;
+
+/* 2em lignes */
+.com-sdb {
+  grid-area: com1;
+  padding: 23px;
+  text-align: center;
+}
+
+/* 3em lignes */
+.img-cuis1 {
+  grid-area: img4;
+  transform: translateX(28px) translateY(-14px);
+}
+.img-cuis2 {
+  grid-area: img5;
+}
+.img-toit1 {
+  grid-area: img6;
+}
+.img-toit2 {
+  grid-area: img7;
+  transform: translateX(-28px) translateY(-14px);
+}
+
+/* 4em lignes  */
+.com-cuis {
+  grid-area: com2;
+  text-align: center;
+  padding: 23px;
+}
+
+.com-toit {
+  grid-area: com3;
+  text-align: center;
+  padding: 23px;
+}
+
+/* 5em lignes  */
+.img-toit3 {
+  grid-area: img8;
+}
+.img-bois {
+  grid-area: img9;
+}
+/* 6em lignes  */
+.com-bois {
+  grid-area: com4;
 }
 
 loading: lazy; /* Chargement différé */
