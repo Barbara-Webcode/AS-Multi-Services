@@ -9,11 +9,13 @@
   --color2: rgb(78, 91, 83);
   --color3: rgb(144, 167, 144);
   --color4: rgb(236, 236, 236);
+  
 }
 /* Body */
 Body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: rgb(243, 243, 243);
+  
 }
 a {
   /*text decoration none :  Pour enlever le surlignage de l'ancrage <a> bien se mettre dans le a comme parent sinon ca ne fonctionne pas */
@@ -41,9 +43,7 @@ span {
 header {
   font-weight: bold;
 }
-.container-nav {
-  min-height: 8vh;
-}
+
 .navbar {
   position: fixed;
   font-size: 2.2rem;
@@ -51,6 +51,8 @@ header {
   width: 100%;
   background: white;
   z-index: 3; /* la bar de naviguation reste en 1er plan */
+  height: 80px;
+  
 }
 .navbar a {
   color: var(--color1);
@@ -61,9 +63,11 @@ header {
   margin-left: auto;
   align-items: center;
   margin-right: 40px;
+  
 }
 .nav-links li {
   font-size: 1.4rem;
+ 
 }
 
 .nav-links :hover {
@@ -80,14 +84,14 @@ header {
 /* Partie Accueil */
 .accueil {
   background: url(./assets/img/Andy.webp) 0 56% / cover;
-  
-  height: 100vh;
+    height: 100vh;
   border-radius: 12px 12px 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+  
   
 }
 
@@ -140,6 +144,7 @@ section.services {
     rgb(231, 231, 231) 0%,
     rgb(243, 243, 243) 100%
   );
+  
 }
 
 
@@ -152,7 +157,7 @@ section.services {
 }
 
 .service-card {
-  border-radius: 15px;
+    border-radius: 15px;
   overflow: hidden; /* les coins arrondi de la border radius ne s'afficher pas car les enfant le p était trop grand */
   box-shadow: -1px -1px 7px black;
 }
@@ -185,9 +190,10 @@ section.services {
   padding-bottom: 8px;
 }
 
-/* A propos */
+/* A propos*/
 .presentation {
   text-align: center;
+  
 }
 
 .presentation-paragraphe {
@@ -215,6 +221,7 @@ section.services {
     "img13 img14 . img15 img16"
     "com5 com5 . com6 com6";
   margin: 50px auto;
+  
 }
 
 .grid-entreprise img {
@@ -355,7 +362,8 @@ section.services {
 .temoignage{
   border: 1px solid black;
   box-shadow: 4px 5px 20px black;
-
+ 
+ 
 }
 .card-com{
   display: flex;
@@ -397,6 +405,7 @@ section.services {
 .map {
   margin-top: 30px;
    box-shadow: 0 0 3px black;
+   
   }
 
 .contact-info{
@@ -426,3 +435,126 @@ section.services {
     color: rgb(11, 50, 3);
     text-align: right;
         }
+
+  html {
+  scroll-padding-top: 100px;
+  scroll-behavior: smooth;/* Optionnel : pour un défilement doux */
+  
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width:1588px){
+      
+  .grid-entreprise{
+  display: grid;
+  width: 95%;
+  max-width: 1200px;
+  margin: 40px auto;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-areas: unset; /* Supprime l'ancien layout */
+  gap: 10px;
+}
+ /* Remettez tous les enfants en position automatique. Si on veut réinitialiser, il faut cibler ces classes. Mais avec > *, on cible tous les enfants, quelle que soit leur classe. */
+ .grid-entreprise > * {
+    grid-column: auto;
+    grid-row: auto;
+    transform: none !important;
+  }
+.grid-entreprise img {
+  border-radius: 5px;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 18px rgb(100, 100, 100);
+}
+
+/* Supprimez toutes les lignes avec transform: translateX() translateY() */
+/* Supprimez aussi les grid-area et grid-template-areas complexes */
+
+.com-sdb, .com-toit, .com-cuis, .com-mur, .com-sdbA, .com-sdbC {
+  text-align: center;
+  padding: 10px;
+  grid-column: 1 / -1; /* Prend toute la largeur */
+}
+.map{
+  margin-left: 10px;
+}
+.dern-info{
+  font-size: 1.7rem;
+  margin-right: 10px ;
+  text-align: center;
+}
+   } 
+
+@media screen and (max-width:1170px){
+    .navbar {
+    font-size: 1.6rem;
+  }
+  .nav-links li {
+  font-size: 1.1rem;
+  }
+.contact-info{
+  margin: 20px ;
+}
+.dern-info{
+  font-size: 1.3rem;
+  margin: 300px 0 0 0;
+   }
+  }
+
+@media screen and (max-width:990px){
+  .navbar{
+    width: 100%;
+
+  }
+  .navbar a{
+    margin: 26px 8px;
+    width: 27%;
+      }
+  .nav-links{
+margin: 0;
+width: 73%;
+justify-content: flex-end;
+  }
+
+  .acc-title{
+    font-size: 2rem;
+  }
+
+.acc-text{
+  font-size: 1rem;
+}
+
+
+  .service-icon{
+    font-size: 3rem;
+    height: 58px;
+  }
+  .service-content{
+    font-size: 0.80rem;
+    padding: 6px;
+  }
+  .service-content h3{
+    padding: 0;
+  }
+  .card-com{
+    
+    width: 95%;
+    margin: 10px auto;
+  }
+  
+  .comm{
+    font-size: 0.9rem;
+    padding: 8px;
+    margin: 5px;
+  }
+  .contact{
+    flex-direction: column;
+  }
+  
+  .dern-info{
+    font-size: 1.3rem;
+    margin: 0 0 20px 0;
+  }
+}
