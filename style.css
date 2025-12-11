@@ -23,6 +23,19 @@ li {
   /* List style none : Pour enlever les boules devant les listes*/
   list-style: none;
 }
+h2{
+  margin-top: 20px;
+  font-size: 2.4rem;
+  color: var(--color2);
+  
+}
+.service-title {
+  color: var(--color2);
+  text-align: center;
+}
+span {
+  font-weight: 600;
+}
 
 /* Header et navigation */
 header {
@@ -67,7 +80,7 @@ header {
 /* Partie Accueil */
 .accueil {
   background: url(./assets/img/Andy.webp) 0 56% / cover;
-  margin-top: 40px;
+  
   height: 100vh;
   border-radius: 12px 12px 0 0;
   display: flex;
@@ -75,6 +88,7 @@ header {
   align-items: center;
   flex-direction: column;
   clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+  
 }
 
 .card {
@@ -116,9 +130,9 @@ header {
   color: var(--color1);
 }
 
-/* Section Services */
+/* Nos Services */
 section.services {
-  min-height: 115vh;
+  min-height: 90vh;
   background-color: rgb(243, 243, 243);
   clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
   background-image: linear-gradient(
@@ -128,19 +142,7 @@ section.services {
   );
 }
 
-.service-title h2 {
-  font-size: 2.4rem;
-  padding-top: 40px;
-}
 
-.service-title {
-  color: var(--color2);
-  text-align: center;
-}
-
-.service-title span {
-  font-weight: 600;
-}
 
 .service-grid-container {
   display: grid;
@@ -187,14 +189,7 @@ section.services {
 .presentation {
   text-align: center;
 }
-.presentation h2 {
-  margin-top: 20px;
-  font-size: 2.4rem;
-  color: var(--color2);
-}
-.presentation span {
-  font-weight: 600;
-}
+
 .presentation-paragraphe {
   border: 1px solid black;
   max-width: 700px;
@@ -207,100 +202,227 @@ section.services {
 
 .grid-entreprise {
   display: grid;
-  max-width: 100%;
-  grid-template-columns: 1fr 1fr 30px 1fr 1fr;
-  grid-template-rows: auto auto auto auto auto auto;
+  width: 70%;
+  grid-template-columns: 1fr 1fr 20px 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto auto;
   grid-template-areas:
-    "img0 img1 . img2 img3"
+    "img1 img2 .  img3 img4"
     "com1 com1 com1 com1 com1"
-    "img4 img5 . img6 img7"
-    "com2 com2 . com3 com3"
-    "img8 img9 . . ."
-    "com4 com4 . . .";
-  margin-top: 50px;
+    "img5 img6 . img7 img8"
+    "com2 com2 com2 com2 com2"
+    "img9 img10 . img11 img12"
+    "com3 com3 . com4 com4"
+    "img13 img14 . img15 img16"
+    "com5 com5 . com6 com6";
+  margin: 50px auto;
 }
 
 .grid-entreprise img {
   border-radius: 5px;
+  height: 360px;
   max-width: 100%;
-  height: 366px;
   position: relative;
   object-fit: cover;
   display: block; /* evite l'espace blanc sous les img */
-  box-shadow: 0 0 6px rgb(100, 100, 100);
+  box-shadow: 0 0 18px rgb(100, 100, 100);
 }
 
-/* 1er ligne */
+/* 1er ligne photo*/
 .img-sdb0 {
-  grid-area: img0;
-  transform: translateX(28px) translateY(-14px);
+  grid-area: img1;
+  transform: translateX(78px) translateY(-14px);
 }
 .img-sdb1 {
-  grid-area: img1;
+  grid-area: img2;
 }
 .img-sdb2 {
-  grid-area: img2;
+  grid-area: img3;
 }
 
 .img-sdb3 {
-  grid-area: img3;
-  transform: translateX(-28px) translateY(-14px);
+  grid-area: img4;
+  transform: translateX(-78px) translateY(-14px);
   position: relative;
   z-index: -1;
 }
 
-/* 2em lignes */
+/* 2em lignes commentaire*/
 .com-sdb {
   grid-area: com1;
-  padding: 23px;
+  padding: 30px;
   text-align: center;
 }
 
-/* 3em lignes */
-.img-cuis1 {
-  grid-area: img4;
-  transform: translateX(28px) translateY(-14px);
-}
-.img-cuis2 {
-  grid-area: img5;
-}
+/* 3em lignes photo */
 .img-toit1 {
-  grid-area: img6;
+  grid-area: img5;
+  transform: translateX(78px) translateY(-14px);
 }
 .img-toit2 {
+  grid-area: img6;
+}
+.img-toit3 {
   grid-area: img7;
-  transform: translateX(-28px) translateY(-14px);
+  object-position: 75% 100%;
+  width: 85%; /* pour redimensionner la photo */
+}
+.img-toit4 {
+  grid-area: img8;
+  transform: translateX(-78px) translateY(-14px);
+  position: relative;
+  z-index: -1;
+  width: 85%; /* pour redimensionner la photo */
 }
 
-/* 4em lignes  */
-.com-cuis {
+/* 4em lignes commentaire */
+.com-toit {
   grid-area: com2;
   text-align: center;
-  padding: 23px;
+  padding: 30px;
 }
 
-.com-toit {
+/* 5em lignes photo */
+
+.img-bois {
+  grid-area: img;
+}
+/* 6em lignes com */
+.com-bois {
+  grid-area: com;
+}
+
+/* 7em lignes photo */
+.img-cuis1 {
+  grid-area: img9;
+  transform: translateX(78px) translateY(-14px);
+  width: 85%; /* pour redimensionner la photo */
+}
+.img-cuis2 {
+  grid-area: img10;
+}
+.img-mur1 {
+  grid-area: img11;
+}
+.img-mur2 {
+  grid-area: img12;
+  transform: translateX(-78px) translateY(-14px);
+}
+/* 8em lignes com */
+.com-cuis {
   grid-area: com3;
   text-align: center;
-  padding: 23px;
+  padding: 30px;
 }
-
-/* 5em lignes  */
-.img-toit3 {
-  grid-area: img8;
-}
-.img-bois {
-  grid-area: img9;
-}
-/* 6em lignes  */
-.com-bois {
+.com-mur {
   grid-area: com4;
+  text-align: center;
+  padding: 30px;
 }
 
-loading: lazy; /* Chargement différé */
-background: #f0f0f0; /* Couleur de fond pendant le chargement */
+/* 9em lignes photo */
+.img-sdbA1 {
+  grid-area: img13;
+  transform: translateX(78px) translateY(-14px);
+  
+}
+.img-sdbA2 {
+  grid-area: img14;
+  /
+}
+.img-sdbC1 {
+  grid-area: img15;
+  
+}
+.img-sdbC2 {
+  grid-area: img16;
+  transform: translateX(-78px) translateY(-14px);
+ }
+ /* 10em lignes com */
+ .com-sdbA {
+  grid-area: com5;
+  text-align: center;
+  padding: 30px;
+}
+.com-sdbC{
+  grid-area: com6;
+  text-align: center;
+  padding: 30px;
+}
+
+
+/* Témoignage */
+
+.temoignage{
+  border: 1px solid black;
+  box-shadow: 4px 5px 20px black;
+
+}
+.card-com{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 75%;
+  margin: 50px auto;
+}
+
+.comm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    border-radius: 12px;
+  padding: 10px;
+  margin: 20px;
+  background: rgb(234, 233, 233);
+  box-shadow: 0 0 5px black;
+
+  }
+  .comm span{
+  color: orange;
+  }
+
 
 /* Contact */
-.map {
-  margin: 30px;
+
+.contact-container{
+   min-height: 60vh;
+   width: 100%;
+   margin-top: 10px;
 }
+
+.contact{
+  display: flex;
+  justify-content:space-evenly;
+
+}
+.map {
+  margin-top: 30px;
+   box-shadow: 0 0 3px black;
+  }
+
+.contact-info{
+  margin: 100px 0 0 120px;
+  padding: 10px;
+  }
+.nom-entreprise{
+  display: flex;
+}
+.nom-entreprise span{
+  font-size: 1.25rem;
+}
+.contact-info h3{
+    color: var(--color1);
+}
+
+.grid-contact{
+  display: grid;
+  grid-template-columns: 8% 92%;
+  margin-top: 22px;
+    gap:3px;
+  }
+
+  .dern-info{
+    font-size: 2rem;
+    margin: 300px 0 0 60px;
+    color: rgb(11, 50, 3);
+    text-align: right;
+        }
