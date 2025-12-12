@@ -221,8 +221,7 @@ section.services {
     "img13 img14 . img15 img16"
     "com5 com5 . com6 com6";
   margin: 50px auto;
-  
-}
+ }
 
 .grid-entreprise img {
   border-radius: 5px;
@@ -232,6 +231,8 @@ section.services {
   object-fit: cover;
   display: block; /* evite l'espace blanc sous les img */
   box-shadow: 0 0 18px rgb(100, 100, 100);
+  transition: transform 0.4s ease;  /* effet sur les images  */
+  
 }
 
 /* 1er ligne photo*/
@@ -392,7 +393,7 @@ section.services {
 /* Contact */
 
 .contact-container{
-   min-height: 60vh;
+   min-height: 70vh;
    width: 100%;
    margin-top: 10px;
 }
@@ -405,8 +406,9 @@ section.services {
 .map {
   margin-top: 30px;
    box-shadow: 0 0 3px black;
+   width: 500px;
    
-  }
+    }
 
 .contact-info{
   margin: 100px 0 0 120px;
@@ -432,12 +434,12 @@ section.services {
   .dern-info{
     font-size: 2rem;
     margin: 300px 0 0 60px;
-    color: rgb(11, 50, 3);
+    color: rgb(14, 69, 3);
     text-align: right;
         }
 
   html {
-  scroll-padding-top: 100px;
+  scroll-padding-top: 100px;/* permet d'atterrir au bon endroit lors des ancrages */
   scroll-behavior: smooth;/* Optionnel : pour un défilement doux */
   
 }
@@ -445,41 +447,42 @@ section.services {
 
 /* RESPONSIVE */
 @media screen and (max-width:1588px){
-      
-  .grid-entreprise{
+.grid-entreprise{
   display: grid;
-  width: 95%;
+  width: 80%;
   max-width: 1200px;
   margin: 40px auto;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(4,1fr);
   grid-template-areas: unset; /* Supprime l'ancien layout */
   gap: 10px;
-}
- /* Remettez tous les enfants en position automatique. Si on veut réinitialiser, il faut cibler ces classes. Mais avec > *, on cible tous les enfants, quelle que soit leur classe. */
+  }
+ /* Remettez tous les enfants en position automatique. Si on veut réinitialiser, il faut cibler ces classes. Mais avec > *, on cible tous les enfants, quelle que soit leur classe. ex: Pour enlever transform:none !important;*/
  .grid-entreprise > * {
     grid-column: auto;
     grid-row: auto;
-    transform: none !important;
-  }
+    }
 .grid-entreprise img {
-  border-radius: 5px;
-  height: 400px;
-  width: 100%;
-  object-fit: cover;
-  box-shadow: 0 0 18px rgb(100, 100, 100);
-}
+   height:350px;
+   width: 100%;
+   }
 
-/* Supprimez toutes les lignes avec transform: translateX() translateY() */
-/* Supprimez aussi les grid-area et grid-template-areas complexes */
+  /* Pour garder l'effet de décalage sur certaines images paire (even)et impaire (odd)*/
+  .grid-item:nth-child(odd) {
+    transform: translateX(-10px);
+  }
+  
+  .grid-item:nth-child(even) {
+    transform: translateX(10px);
+  }
 
 .com-sdb, .com-toit, .com-cuis, .com-mur, .com-sdbA, .com-sdbC {
   text-align: center;
   padding: 10px;
   grid-column: 1 / -1; /* Prend toute la largeur */
-}
+  }
 .map{
   margin-left: 10px;
-}
+   }
 .dern-info{
   font-size: 1.7rem;
   margin-right: 10px ;
@@ -487,7 +490,8 @@ section.services {
 }
    } 
 
-@media screen and (max-width:1170px){
+
+@media screen and (max-width:1450px){
     .navbar {
     font-size: 1.6rem;
   }
@@ -501,9 +505,16 @@ section.services {
   font-size: 1.3rem;
   margin: 300px 0 0 0;
    }
+    .grid-entreprise{
+  width: 99%;}
+
+   .grid-entreprise img {
+  height: 300px;
+  width: 100%;
+}
   }
 
-@media screen and (max-width:990px){
+@media screen and (max-width:1200px){
   .navbar{
     width: 100%;
 
@@ -517,16 +528,12 @@ margin: 0;
 width: 73%;
 justify-content: flex-end;
   }
-
   .acc-title{
     font-size: 2rem;
   }
-
 .acc-text{
   font-size: 1rem;
 }
-
-
   .service-icon{
     font-size: 3rem;
     height: 58px;
@@ -538,23 +545,29 @@ justify-content: flex-end;
   .service-content h3{
     padding: 0;
   }
+  .grid-entreprise img {
+   height:220px;
+   width: 100%;
+   }
   .card-com{
-    
-    width: 95%;
+        width: 95%;
     margin: 10px auto;
   }
-  
-  .comm{
+    .comm{
     font-size: 0.9rem;
     padding: 8px;
     margin: 5px;
   }
   .contact{
-    flex-direction: column;
+    flex-direction:column;
+    margin: 10px;
+    align-items: center;
   }
-  
-  .dern-info{
+    .dern-info{
     font-size: 1.3rem;
     margin: 0 0 20px 0;
   }
+}
+@media screen and (max-width:900px){
+
 }
