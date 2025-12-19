@@ -46,8 +46,7 @@ header {
 
 .navbar {
   position: fixed;
-  
-  display: flex;
+    display: flex;
   width: 100%;
   background: white;
   z-index: 3; /* la bar de naviguation reste en 1er plan */
@@ -57,8 +56,8 @@ header {
 .navbar a {
   width: 20%;
   color: var(--color1);
-  margin: 26px 0;
-  font-size: 1.8rem;
+  margin: 26px 0 26px 20px;
+    font-size: 1.8rem;
 }
 .navbar ul{
   width: 80%;
@@ -139,7 +138,7 @@ header {
 
 /* Nos Services */
 section.services {
-  height: 100vh;
+  height: 80vh;
   background-color: rgb(243, 243, 243);
   clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
   background-image: linear-gradient(
@@ -195,8 +194,7 @@ section.services {
 /* A propos*/
 .presentation {
   text-align: center;
-  
-}
+ }
 
 .presentation-paragraphe {
   border: 1px solid black;
@@ -240,7 +238,7 @@ section.services {
 /* 1er ligne photo*/
 .img-sdb0 {
   grid-area: img1;
-  transform: translateX(78px) translateY(-14px);
+  transform: translateX(67px) translateY(-14px);
 }
 .img-sdb1 {
   grid-area: img2;
@@ -251,7 +249,7 @@ section.services {
 
 .img-sdb3 {
   grid-area: img4;
-  transform: translateX(-78px) translateY(-14px);
+  transform: translateX(-67px) translateY(-14px);
   position: relative;
   z-index: -1;
 }
@@ -266,7 +264,7 @@ section.services {
 /* 3em lignes photo */
 .img-toit1 {
   grid-area: img5;
-  transform: translateX(78px) translateY(-14px);
+  transform: translateX(67px) translateY(-14px);
 }
 .img-toit2 {
   grid-area: img6;
@@ -278,7 +276,7 @@ section.services {
 }
 .img-toit4 {
   grid-area: img8;
-  transform: translateX(-78px) translateY(-14px);
+  transform: translateX(-67px) translateY(-14px);
   position: relative;
   z-index: -1;
   width: 85%; /* pour redimensionner la photo */
@@ -304,7 +302,7 @@ section.services {
 /* 7em lignes photo */
 .img-cuis1 {
   grid-area: img9;
-  transform: translateX(78px) translateY(-14px);
+  transform: translateX(67px) translateY(-14px);
   width: 85%; /* pour redimensionner la photo */
 }
 .img-cuis2 {
@@ -315,7 +313,7 @@ section.services {
 }
 .img-mur2 {
   grid-area: img12;
-  transform: translateX(-78px) translateY(-14px);
+  transform: translateX(-67px) translateY(-14px);
 }
 /* 8em lignes com */
 .com-cuis {
@@ -332,7 +330,7 @@ section.services {
 /* 9em lignes photo */
 .img-sdbA1 {
   grid-area: img13;
-  transform: translateX(78px) translateY(-14px);
+  transform: translateX(67px) translateY(-14px);
   
 }
 .img-sdbA2 {
@@ -345,7 +343,7 @@ section.services {
 }
 .img-sdbC2 {
   grid-area: img16;
-  transform: translateX(-78px) translateY(-14px);
+  transform: translateX(-67px) translateY(-14px);
  }
  /* 10em lignes com */
  .com-sdbA {
@@ -365,6 +363,7 @@ section.services {
 .temoignage{
   border: 1px solid black;
   box-shadow: 4px 5px 20px black;
+  width: 100%;
  
  
 }
@@ -436,7 +435,7 @@ section.services {
   .dern-info{
     font-size: 2rem;
     margin: 300px 0 0 60px;
-    color: rgb(14, 69, 3);
+    color: rgb(25, 115, 7);
     text-align: right;
         }
 
@@ -448,6 +447,8 @@ section.services {
 
 
 /* RESPONSIVE */
+
+
 @media screen and (max-width:1588px){
 .grid-entreprise{
   display: grid;
@@ -491,7 +492,6 @@ section.services {
   text-align: center;
 }
    } 
-
 
 @media screen and (max-width:1450px){
     .navbar {
@@ -639,13 +639,31 @@ margin: 20px auto;
 }
 }
 
-@media screen and (max-width:520px){
- .navbar a{
-  font-size: 0.8rem;
+@media screen and (max-width:535px){
+  .navbar a{
+  font-size: 0.7rem;
+  width: 20%;
   
  }
+ .navbar ul{
+  width: 80%;
+  }
    .nav-links li {
-  font-size: 0.8rem;
- 
+  font-size: 0.7rem;
+     } 
+    section.services {
+  height: 90vh;
+ }
+   .service-content {
+        height: 250px;
 }
+ .card-com{
+    width: 100%;
+    margin: 10px auto;
+  }
+    .comm{
+    font-size: 0.75rem;
+    padding: 8px;
+    margin: 5px;
+  }
 }
