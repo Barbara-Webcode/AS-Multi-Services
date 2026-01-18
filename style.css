@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -9,13 +9,11 @@
   --color2: rgb(78, 91, 83);
   --color3: rgb(144, 167, 144);
   --color4: rgb(236, 236, 236);
-  
 }
 /* Body */
 Body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: rgb(243, 243, 243);
-  
 }
 a {
   /*text decoration none :  Pour enlever le surlignage de l'ancrage <a> bien se mettre dans le a comme parent sinon ca ne fonctionne pas */
@@ -25,11 +23,10 @@ li {
   /* List style none : Pour enlever les boules devant les listes*/
   list-style: none;
 }
-h2{
+h2 {
   margin-top: 20px;
   font-size: 2.4rem;
   color: var(--color2);
-  
 }
 .service-title {
   color: var(--color2);
@@ -46,30 +43,27 @@ header {
 
 .navbar {
   position: fixed;
-    display: flex;
+  display: flex;
   width: 100%;
   background: white;
   z-index: 3; /* la bar de naviguation reste en 1er plan */
-  
-  
 }
 .navbar a {
   width: 20%;
   color: var(--color1);
   margin: 26px 0 26px 20px;
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
-.navbar ul{
+.navbar ul {
   width: 80%;
   display: flex;
   margin: 15px;
   align-items: center;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 .nav-links li {
   font-size: 1.8rem;
   padding: 0 15px;
- 
 }
 
 .nav-links :hover {
@@ -86,16 +80,14 @@ header {
 /* Partie Accueil */
 .accueil {
   background: url(./assets/img/Andy.webp) 0 56% / cover;
-    height: 100vh;
-    width: 100%;
+  height: 100vh;
+  width: 100%;
   border-radius: 12px 12px 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
-  
-  
 }
 
 .card {
@@ -139,7 +131,7 @@ header {
 
 /* Nos Services */
 section.services {
-  height: 80vh;
+  height: 95vh;
   background-color: rgb(243, 243, 243);
   clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
   background-image: linear-gradient(
@@ -147,10 +139,7 @@ section.services {
     rgb(231, 231, 231) 0%,
     rgb(243, 243, 243) 100%
   );
-  
 }
-
-
 
 .service-grid-container {
   display: grid;
@@ -160,7 +149,7 @@ section.services {
 }
 
 .service-card {
-    border-radius: 15px;
+  border-radius: 15px;
   overflow: hidden; /* les coins arrondi de la border radius ne s'afficher pas car les enfant le p était trop grand */
   box-shadow: -1px -1px 7px black;
 }
@@ -175,7 +164,7 @@ section.services {
 }
 
 .service-content {
-  min-height: 110px;
+  min-height: 130px;
   color: var(--color2);
   display: flex;
   flex-direction: column;
@@ -195,7 +184,7 @@ section.services {
 /* A propos*/
 .presentation {
   text-align: center;
- }
+}
 
 .presentation-paragraphe {
   border: 1px solid black;
@@ -211,7 +200,8 @@ section.services {
   display: grid;
   width: 90%;
   grid-template-columns: 1fr 1fr 20px 1fr 1fr;
-  grid-template-rows: auto auto auto auto auto auto auto;
+  grid-template-rows: repeat(8, auto);
+
   grid-template-areas:
     "img1 img2 .  img3 img4"
     "com1 com1 com1 com1 com1"
@@ -222,7 +212,7 @@ section.services {
     "img13 img14 . img15 img16"
     "com5 com5 . com6 com6";
   margin: 50px auto;
- }
+}
 
 .grid-entreprise img {
   border-radius: 5px;
@@ -232,8 +222,7 @@ section.services {
   object-fit: cover;
   display: block; /* evite l'espace blanc sous les img */
   box-shadow: 0 0 18px rgb(100, 100, 100);
-  transition: transform 0.4s ease;  /* effet sur les images  */
-  
+  transition: transform 0.4s ease; /* effet sur les images  */
 }
 
 /* 1er ligne photo*/
@@ -273,14 +262,14 @@ section.services {
 .img-toit3 {
   grid-area: img7;
   object-position: 75% 100%;
-  width: 85%; /* pour redimensionner la photo */
+  width: 60%; /* pour redimensionner la photo */
 }
 .img-toit4 {
   grid-area: img8;
   transform: translateX(-67px) translateY(-14px);
   position: relative;
   z-index: -1;
-  width: 85%; /* pour redimensionner la photo */
+  width: 60%; /* pour redimensionner la photo */
 }
 
 /* 4em lignes commentaire */
@@ -291,20 +280,10 @@ section.services {
 }
 
 /* 5em lignes photo */
-
-.img-bois {
-  grid-area: img;
-}
-/* 6em lignes com */
-.com-bois {
-  grid-area: com;
-}
-
-/* 7em lignes photo */
 .img-cuis1 {
   grid-area: img9;
   transform: translateX(67px) translateY(-14px);
-  width: 85%; /* pour redimensionner la photo */
+  width: 64%; /* pour redimensionner la photo */
 }
 .img-cuis2 {
   grid-area: img10;
@@ -312,63 +291,64 @@ section.services {
 .img-mur1 {
   grid-area: img11;
 }
+
 .img-mur2 {
   grid-area: img12;
   transform: translateX(-67px) translateY(-14px);
 }
-/* 8em lignes com */
+
+/* 6em lignes com */
 .com-cuis {
   grid-area: com3;
   text-align: center;
+
   padding: 30px;
 }
+
 .com-mur {
   grid-area: com4;
   text-align: center;
   padding: 30px;
 }
 
-/* 9em lignes photo */
+/* 7em lignes photo */
+
 .img-sdbA1 {
   grid-area: img13;
   transform: translateX(67px) translateY(-14px);
-  
 }
 .img-sdbA2 {
   grid-area: img14;
-  /
 }
 .img-sdbC1 {
   grid-area: img15;
-  
 }
 .img-sdbC2 {
   grid-area: img16;
   transform: translateX(-67px) translateY(-14px);
- }
- /* 10em lignes com */
- .com-sdbA {
+}
+
+/* 8em lignes com */
+.com-sdbA {
   grid-area: com5;
   text-align: center;
   padding: 30px;
 }
-.com-sdbC{
+
+.com-sdbC {
   grid-area: com6;
   text-align: center;
   padding: 30px;
 }
 
-
 /* Témoignage */
 
-.temoignage{
+.temoignage {
   border: 1px solid black;
   box-shadow: 4px 5px 20px black;
   width: 100%;
- 
- 
 }
-.card-com{
+.card-com {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -376,226 +356,225 @@ section.services {
   margin: 50px auto;
 }
 
-.comm{
+.comm {
   display: flex;
   flex-direction: column;
   align-items: center;
-    border-radius: 12px;
+  border-radius: 12px;
   padding: 10px;
   margin: 20px;
   background: rgb(234, 233, 233);
   box-shadow: 0 0 5px black;
-
-  }
-  .comm span{
+}
+.comm span {
   color: orange;
-  }
-
+}
 
 /* Contact */
 
-.contact-container{
-   min-height: 78vh;
-   width: 100%;
-   margin-top: 10px;
+.contact-container {
+  min-height: 78vh;
+  width: 100%;
+  margin-top: 10px;
 }
 
-.contact{
+.contact {
   display: flex;
-  justify-content:space-evenly;
-
+  justify-content: space-evenly;
 }
 .map {
   margin-top: 30px;
-   box-shadow: 0 0 3px black;
-   width: 500px;
-   
-    }
+  box-shadow: 0 0 3px black;
+  width: 500px;
+}
 
-.contact-info{
+.contact-info {
   margin: 100px 0 0 120px;
   padding: 10px;
-  }
-.nom-entreprise{
+}
+.nom-entreprise {
   display: flex;
 }
-.nom-entreprise span{
+.nom-entreprise span {
   font-size: 1.25rem;
 }
-.contact-info h3{
-    color: var(--color1);
+.contact-info h3 {
+  color: var(--color1);
 }
 
-.grid-contact{
+.grid-contact {
   display: grid;
   grid-template-columns: 8% 92%;
   margin-top: 22px;
-    gap:3px;
-  }
-
-  .dern-info{
-    font-size: 2rem;
-    margin: 300px 0 0 60px;
-    color: rgb(25, 115, 7);
-    text-align: right;
-        }
-
-  html {
-  scroll-padding-top: 100px;/* permet d'atterrir au bon endroit lors des ancrages */
-  scroll-behavior: smooth;/* Optionnel : pour un défilement doux */
-  
+  gap: 3px;
 }
 
+.dern-info {
+  font-size: 2rem;
+  margin: 300px 0 0 60px;
+  color: rgb(25, 115, 7);
+  text-align: right;
+}
+
+html {
+  scroll-padding-top: 100px; /* permet d'atterrir au bon endroit lors des ancrages */
+  scroll-behavior: smooth; /* Optionnel : pour un défilement doux */
+}
 
 /* RESPONSIVE */
 
-
-@media screen and (max-width:1588px){
-.grid-entreprise{
-  display: grid;
-  width: 80%;
-  max-width: 1200px;
-  margin: 40px auto;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-areas: unset; /* Supprime l'ancien layout */
-  gap: 10px;
-  }
- /* Remettez tous les enfants en position automatique. Si on veut réinitialiser, il faut cibler ces classes. Mais avec > *, on cible tous les enfants, quelle que soit leur classe. ex: Pour enlever transform:none !important;*/
- .grid-entreprise > * {
+@media screen and (max-width: 1588px) {
+  /* .grid-entreprise {
+    display: grid;
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: unset; /* Supprime l'ancien layout */
+    /* gap: 10px;
+  } */
+  /* Remettez tous les enfants en position automatique. Si on veut réinitialiser, il faut cibler ces classes. Mais avec > *, on cible tous les enfants, quelle que soit leur classe. ex: Pour enlever transform:none !important;*/
+  /* .grid-entreprise > * {
     grid-column: auto;
     grid-row: auto;
-    }
-.grid-entreprise img {
-   height:350px;
-   width: 100%;
-   }
+  }
+  .grid-entreprise img {
+    height: 350px;
+    width: 100%;
+  }
 
   /* Pour garder l'effet de décalage sur certaines images paire (even)et impaire (odd)*/
-  .grid-item:nth-child(odd) {
+  /* .grid-item:nth-child(odd) {
     transform: translateX(-10px);
   }
-  
+
   .grid-item:nth-child(even) {
     transform: translateX(10px);
   }
 
-.com-sdb, .com-toit, .com-cuis, .com-mur, .com-sdbA, .com-sdbC {
-  text-align: center;
-  padding: 10px;
-  grid-column: 1 / -1; /* Prend toute la largeur */
+  .com-sdb,
+  .com-toit,
+  .com-cuis,
+  .com-mur,
+  .com-sdbA,
+  .com-sdbC {
+    text-align: center;
+    padding: 10px;
+    grid-column: 1 / -1; /* Prend toute la largeur */
+  } */ */ */
+  .map {
+    margin-left: 10px;
   }
-.map{
-  margin-left: 10px;
-   }
-.dern-info{
-  font-size: 1.7rem;
-  margin-right: 10px ;
-  text-align: center;
+  .dern-info {
+    font-size: 1.7rem;
+    margin-right: 10px;
+    text-align: center;
+  }
 }
-   } 
 
-@media screen and (max-width:1450px){
-    .navbar {
+@media screen and (max-width: 1450px) {
+  .navbar {
     font-size: 1.4rem;
   }
   .nav-links li {
-  font-size: 1.4rem;
+    font-size: 1.4rem;
   }
-.contact-info{
-  margin: 20px ;
-}
-.dern-info{
-  font-size: 1.3rem;
-  margin: 300px 0 0 0;
-   }
-    .grid-entreprise{
-  width: 99%;}
-
-   .grid-entreprise img {
-  height: 300px;
-  width: 100%;
-}
+  .contact-info {
+    margin: 20px;
+  }
+  .dern-info {
+    font-size: 1.3rem;
+    margin: 300px 0 0 0;
+  }
+  .grid-entreprise {
+    width: 99%;
   }
 
-@media screen and (max-width:1200px){
-  .navbar a{
+  .grid-entreprise img {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar a {
     font-size: 1rem;
   }
   .nav-links li {
-  font-size: 1rem;
+    font-size: 1rem;
   }
-  .navbar a{
+  .navbar a {
     margin: 26px 8px;
     width: 27%;
-      }
-  .navbar ul{
-  width: 73%;
   }
-   
-  .acc-title{
+  .navbar ul {
+    width: 73%;
+  }
+
+  .acc-title {
     font-size: 2rem;
   }
-  .acc-text{
-  font-size: 1rem;
+  .acc-text {
+    font-size: 1rem;
   }
-  
-  .service-icon{
+
+  .service-icon {
     font-size: 3rem;
     height: 58px;
   }
-  .service-content{
-    font-size: 0.80rem;
-     }
-     
-    .grid-entreprise img {
-   height:220px;
-   width: 100%;
-   }
-  .card-com{
-        width: 95%;
+  .service-content {
+    font-size: 0.8rem;
+  }
+
+  .grid-entreprise img {
+    height: 220px;
+    width: 100%;
+  }
+  .card-com {
+    width: 95%;
     margin: 10px auto;
   }
-    .comm{
+  .comm {
     font-size: 0.9rem;
     padding: 8px;
     margin: 5px;
   }
-  .contact{
-    flex-direction:column;
+  .contact {
+    flex-direction: column;
     margin: 10px;
     align-items: center;
   }
-    .dern-info{
+  .dern-info {
     font-size: 1.3rem;
     margin: 0 0 20px 0;
   }
 }
-@media screen and (max-width:990px){
-  .navbar a{
-  width: 24%;
+@media screen and (max-width: 990px) {
+  .navbar a {
+    width: 24%;
   }
-  .navbar ul{
-  width: 76%;
+  .navbar ul {
+    width: 76%;
   }
   .nav-links li {
-  padding: 0 10px;
+    padding: 0 10px;
   }
-  .accueil{
-  height: 80vh;
+  .accueil {
+    height: 80vh;
   }
-  .acc-title{
-  font-size: 1.2rem;
+  .acc-title {
+    font-size: 1.2rem;
   }
-  .acc-text{
-  font-size: 0.8rem;
+  .acc-text {
+    font-size: 0.8rem;
   }
-  .acc-btn{
-  font-size: 0.8rem;
+  .acc-btn {
+    font-size: 0.8rem;
   }
- section.services {
-  height: 80vh;
- }
-    .service-icon{
+  section.services {
+    height: 80vh;
+  }
+  .service-icon {
     font-size: 2.1rem;
     height: 40px;
   }
@@ -603,80 +582,76 @@ section.services {
     margin: 10px;
     gap: 12px;
   }
-  
+
   .service-content {
     padding: 5px;
-  
   }
-.presentation-paragraphe{
-font-size: 0.8rem;
-margin: 20px auto;
-}
-.grid-entreprise{
+  .presentation-paragraphe {
+    font-size: 0.8rem;
+    margin: 20px auto;
+  }
+  .grid-entreprise {
     width: 90%;
-  max-width: 1200px;
-  margin: 30px auto;
-  grid-template-columns: repeat(2,1fr);
-}
-} 
-
-@media screen and (max-width:837px){
- .navbar a{
-  font-size: 0.9rem;
-  margin: 26px 2px;
- }
- .navbar ul{
-   margin: 0;
- }
-  .nav-links li {
-  font-size: 0.9rem;
-  padding: 3px;
-}
- section.services {
-  height: 100vh;
- }
-  .service-content {
-   height: 160px;
-}
-}
-
-@media screen and (max-width:535px){
-  .navbar a{
-  font-size: 0.7rem;
-  width: 20%;
-  
- }
- .navbar ul{
-  width: 80%;
+    max-width: 1200px;
+    margin: 30px auto;
+    grid-template-columns: repeat(2, 1fr);
   }
-   .nav-links li {
-  font-size: 0.7rem;
-     } 
-    section.services {
-  height: 90vh;
- }
-   .service-content {
-        height: 250px;
 }
- .card-com{
+
+@media screen and (max-width: 837px) {
+  .navbar a {
+    font-size: 0.9rem;
+    margin: 26px 2px;
+  }
+  .navbar ul {
+    margin: 0;
+  }
+  .nav-links li {
+    font-size: 0.9rem;
+    padding: 3px;
+  }
+  section.services {
+    height: 100vh;
+  }
+  .service-content {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .navbar a {
+    font-size: 0.7rem;
+    width: 20%;
+  }
+  .navbar ul {
+    width: 80%;
+  }
+  .nav-links li {
+    font-size: 0.7rem;
+  }
+  section.services {
+    height: 110vh;
+  }
+
+  .service-content {
+    height: 250px;
+  }
+  .card-com {
     width: 100%;
     margin: 10px auto;
   }
-    .comm{
+  .comm {
     font-size: 0.75rem;
     padding: 8px;
     margin: 5px;
   }
 }
-@media screen and (max-width:480px){
-  section.services {
-  height: 110vh;
- }
- .temoignage{
-  width: 100%;
- }
- .card-com{
-  display: flex;
-  flex-direction: column;
- }
+@media screen and (max-width: 480px) {
+  .temoignage {
+    width: 100%;
+  }
+  .card-com {
+    display: flex;
+    flex-direction: column;
+  }
 }
