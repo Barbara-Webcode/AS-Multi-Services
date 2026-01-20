@@ -633,6 +633,7 @@ html {
       "com5 com5"
       "img15 img16"
       "com6 com6";
+      gap: 15px;
 
       
   }
@@ -672,4 +673,7 @@ html {
     display: flex;
     flex-direction: column;
   }
+ .service-content {
+  min-height: 320px;
 }
+ }
