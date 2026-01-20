@@ -228,20 +228,22 @@ section.services {
 /* 1er ligne photo*/
 .img-sdb0 {
   grid-area: img1;
-  transform: translateX(67px) translateY(-14px);
+  transform: translateX(90px) translateY(-14px);
 }
 .img-sdb1 {
   grid-area: img2;
+  transform: translateX(-90px);
 }
 .img-sdb2 {
   grid-area: img3;
+  transform: translateX(90px) translateY(-14px);
+  z-index: -1;
 }
 
 .img-sdb3 {
   grid-area: img4;
-  transform: translateX(-67px) translateY(-14px);
+  transform: translateX(-90px);
   position: relative;
-  z-index: -1;
 }
 
 /* 2em lignes commentaire*/
@@ -254,21 +256,23 @@ section.services {
 /* 3em lignes photo */
 .img-toit1 {
   grid-area: img5;
-  transform: translateX(67px) translateY(-14px);
+  transform: translateX(90px) translateY(-14px);
 }
 .img-toit2 {
   grid-area: img6;
+  transform: translateX(-90px);
 }
 .img-toit3 {
   grid-area: img7;
+  transform: translateX(90px) translateY(-14px);
   object-position: 75% 100%;
   width: 60%; /* pour redimensionner la photo */
+  z-index: -1;
 }
 .img-toit4 {
   grid-area: img8;
-  transform: translateX(-67px) translateY(-14px);
+  transform: translateX(-90px);
   position: relative;
-  z-index: -1;
   width: 60%; /* pour redimensionner la photo */
 }
 
@@ -282,19 +286,21 @@ section.services {
 /* 5em lignes photo */
 .img-cuis1 {
   grid-area: img9;
-  transform: translateX(67px) translateY(-14px);
+  transform: translateX(90px) translateY(-14px);
   width: 64%; /* pour redimensionner la photo */
 }
 .img-cuis2 {
   grid-area: img10;
+  transform: translateX(-90px);
 }
 .img-mur1 {
   grid-area: img11;
+  transform: translateX(90px) translateY(-14px);
 }
 
 .img-mur2 {
   grid-area: img12;
-  transform: translateX(-67px) translateY(-14px);
+  transform: translateX(-90px);
 }
 
 /* 6em lignes com */
@@ -315,17 +321,19 @@ section.services {
 
 .img-sdbA1 {
   grid-area: img13;
-  transform: translateX(67px) translateY(-14px);
+  transform: translateX(90px) translateY(-14px);
 }
 .img-sdbA2 {
   grid-area: img14;
+  transform: translateX(-90px);
 }
 .img-sdbC1 {
   grid-area: img15;
+  transform: translateX(90px) translateY(-14px);
 }
 .img-sdbC2 {
   grid-area: img16;
-  transform: translateX(-67px) translateY(-14px);
+  transform: translateX(-90px);
 }
 
 /* 8em lignes com */
@@ -424,25 +432,6 @@ html {
 /* RESPONSIVE */
 
 @media screen and (max-width: 1588px) {
-  /* .grid-entreprise {
-    display: grid;
-    width: 80%;
-    max-width: 1200px;
-    margin: 40px auto;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: unset; /* Supprime l'ancien layout */
-    /* gap: 10px;
-  } */
-  /* Remettez tous les enfants en position automatique. Si on veut réinitialiser, il faut cibler ces classes. Mais avec > *, on cible tous les enfants, quelle que soit leur classe. ex: Pour enlever transform:none !important;*/
-  /* .grid-entreprise > * {
-    grid-column: auto;
-    grid-row: auto;
-  }
-  .grid-entreprise img {
-    height: 350px;
-    width: 100%;
-  }
-
   /* Pour garder l'effet de décalage sur certaines images paire (even)et impaire (odd)*/
   /* .grid-item:nth-child(odd) {
     transform: translateX(-10px);
@@ -450,18 +439,32 @@ html {
 
   .grid-item:nth-child(even) {
     transform: translateX(10px);
-  }
+  }*/
 
-  .com-sdb,
-  .com-toit,
-  .com-cuis,
-  .com-mur,
-  .com-sdbA,
-  .com-sdbC {
-    text-align: center;
-    padding: 10px;
-    grid-column: 1 / -1; /* Prend toute la largeur */
-  } */ */ */
+  .grid-entreprise img {
+    height: 300px;
+    width: 100%;
+  }
+  .img-sdb0,
+  .img-sdb2,
+  .img-toit1,
+  .img-toit3,
+  .img-cuis1,
+  .img-mur1,
+  .img-sdbA1,
+  .img-sdbC1 {
+    transform: translateX(20px) translateY(-14px);
+  }
+  .img-sdb1,
+  .img-sdb3,
+  .img-toit2,
+  .img-toit4,
+  .img-cuis2,
+  .img-mur2,
+  .img-sdbA2,
+  .img-sdbC2 {
+    transform: translateX(-20px);
+  }
   .map {
     margin-left: 10px;
   }
@@ -591,10 +594,7 @@ html {
     margin: 20px auto;
   }
   .grid-entreprise {
-    width: 90%;
-    max-width: 1200px;
     margin: 30px auto;
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -616,8 +616,26 @@ html {
   .service-content {
     height: 180px;
   }
-}
+  .grid-entreprise {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "img1 img2"
+      "img3 img4"
+      "com1 com1"
+      "img5 img6"
+      "img7 img8"
+      "com2 com2"
+      "img9 img10"
+      "com3 com3"
+      "img11 img12"
+      "com4 com4"
+      "img13 img14"
+      "com5 com5"
+      "img15 img16"
+      "com6 com6";
 
+      
+  }
 @media screen and (max-width: 535px) {
   .navbar a {
     font-size: 0.7rem;
