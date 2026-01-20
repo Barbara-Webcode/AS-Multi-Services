@@ -599,6 +599,10 @@ html {
 }
 
 @media screen and (max-width: 837px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+
   .navbar a {
     font-size: 0.9rem;
     margin: 26px 2px;
@@ -633,10 +637,10 @@ html {
       "com5 com5"
       "img15 img16"
       "com6 com6";
-      gap: 15px;
-
-      
+    gap: 15px;
   }
+}
+
 @media screen and (max-width: 535px) {
   .navbar a {
     font-size: 0.7rem;
@@ -673,7 +677,10 @@ html {
     display: flex;
     flex-direction: column;
   }
- .service-content {
-  min-height: 320px;
+  section.services {
+    height: 140vh;
+  }
+  .service-content {
+    min-height: 320px;
+  }
 }
- }
