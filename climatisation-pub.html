@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Climatisation rapide à Saint-Drézéry & Montpellier | AS Multi Services</title>
+<meta name="description" content="Installation de climatiseur réversible rapide à Saint-Drézéry, Montpellier et alentours. Devis gratuit, artisan local, intervention rapide." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Google tag GOOGLE ADS (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17853743090"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "AW-17853743090");
+</script>
+
+<style>
+  :root{
+    --bg:            #12232B;
+    --panel:         #1B323C;
+    --panel-line:    #2A4450;
+    --heat:          #E4572E;
+    --heat-soft:     #F08A5D;
+    --cool:          #4FB3A9;
+    --text:          #F5F1E8;
+    --text-muted:    #A9BDC2;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Public Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    margin:0 0 .4em 0;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 24px;}
+
+  /* Barre d'appel fixe, toujours visible (page pensée pour le mobile) */
+  .call-bar{
+    position:fixed; bottom:0; left:0; right:0; z-index:50;
+    background:var(--heat);
+    text-align:center;
+    padding:14px 20px;
+    box-shadow:0 -6px 20px rgba(0,0,0,.25);
+  }
+  .call-bar a{
+    display:block;
+    color:#12181A;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:1.05rem;
+    text-decoration:none;
+    letter-spacing:.02em;
+  }
+
+  /* HERO */
+  .hero{
+    padding:56px 0 48px 0;
+    background:
+      radial-gradient(120% 100% at 50% 0%, rgba(228,87,46,.16), rgba(228,87,46,0) 55%),
+      var(--bg);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    color:var(--heat-soft);
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:2.15rem;
+    line-height:1.18;
+  }
+  .hero .sub{
+    color:var(--text-muted);
+    font-size:1.05rem;
+    margin:14px 0 30px 0;
+    max-width:46ch;
+  }
+
+  /* Le thermomètre horizontal — élément signature */
+  .gauge{
+    margin:34px 0 38px 0;
+  }
+  .gauge-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .gauge-temp{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:2.6rem;
+  }
+  .gauge-temp.hot{color:var(--heat-soft);}
+  .gauge-temp.cool{color:var(--cool);}
+  .gauge-label{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    color:var(--text-muted);
+    letter-spacing:.08em;
+    margin-top:2px;
+  }
+  .gauge-bar{
+    height:8px;
+    border-radius:99px;
+    margin:14px 0 6px 0;
+    background:linear-gradient(90deg, var(--heat) 0%, var(--heat-soft) 35%, var(--cool) 100%);
+    position:relative;
+  }
+  .gauge-bar::after{
+    content:'';
+    position:absolute; top:-4px; left:62%;
+    width:16px; height:16px; border-radius:50%;
+    background:var(--bg);
+    border:3px solid var(--text);
+  }
+  .gauge-caption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    color:var(--text-muted);
+    text-align:center;
+  }
+
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:14px 22px;
+    border-radius:8px;
+    font-weight:600;
+    text-decoration:none;
+    font-size:.95rem;
+  }
+  .btn-primary{background:var(--heat); color:#12181A;}
+  .btn-ghost{border:1px solid var(--panel-line); color:var(--text);}
+
+  /* SECTIONS */
+  section{padding:44px 0; border-top:1px solid var(--panel-line);}
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    color:var(--text-muted);
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    margin-bottom:10px;
+  }
+  .problem p{color:var(--text-muted); font-size:1.02rem;}
+  .problem strong{color:var(--text);}
+
+  /* Étapes — vraie séquence chronologique, la numérotation a un sens ici */
+  .steps{display:flex; flex-direction:column; gap:0;}
+  .step{
+    display:flex; gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid var(--panel-line);
+  }
+  .step:last-child{border-bottom:none;}
+  .step-num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--heat-soft);
+    font-size:.85rem;
+    min-width:28px;
+    padding-top:3px;
+  }
+  .step h3{font-size:1.08rem; margin-bottom:4px;}
+  .step p{color:var(--text-muted); margin:0; font-size:.95rem;}
+
+  /* Témoignages */
+  .quote{
+    background:var(--panel);
+    border:1px solid var(--panel-line);
+    border-radius:10px;
+    padding:20px 22px;
+    margin-bottom:14px;
+  }
+  .quote .stars{color:var(--heat-soft); letter-spacing:2px; font-size:.85rem;}
+  .quote p{margin:10px 0 10px 0; color:var(--text);}
+  .quote span.name{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    color:var(--text-muted);
+  }
+
+  .zone p{color:var(--text-muted);}
+
+  /* CONTACT FINAL */
+  .contact-final{
+    text-align:center;
+    padding-bottom:110px; /* espace pour la call-bar fixe */
+  }
+  .contact-final h2{font-size:1.5rem; max-width:22ch; margin:0 auto 20px auto;}
+  .contact-final .phone{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:1.3rem;
+    color:var(--cool);
+    display:block;
+    margin-bottom:22px;
+    text-decoration:none;
+  }
+
+  :focus-visible{outline:2px solid var(--cool); outline-offset:2px;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap hero">
+    <div class="eyebrow">AS Multi Services — Saint-Drézéry</div>
+    <h1>Il fait 35°C dehors.<br>Plus vite vous commandez, plus vite vous serez au frais.</h1>
+    <p class="sub">Climatiseurs réversibles prêts à poser (déjà préchargés) — installation rapide dès réception, à Saint-Drézéry, Montpellier et alentours.</p>
+
+    <div class="gauge">
+      <div class="gauge-row">
+        <div>
+          <span class="gauge-temp hot">35°</span>
+          <span class="gauge-label">DEHORS, AUJOURD'HUI</span>
+        </div>
+        <div style="text-align:right;">
+          <span class="gauge-temp cool">22°</span>
+          <span class="gauge-label">CHEZ VOUS, UNE FOIS POSÉ</span>
+        </div>
+      </div>
+      <div class="gauge-bar"></div>
+      <div class="gauge-caption">devis gratuit → commande → pose rapide à réception</div>
+    </div>
+
+    <div class="cta-row">
+      <a href="tel:0604515694" class="btn btn-primary">J'appelle maintenant</a>
+      <a href="#contact" class="btn btn-ghost">Demander un devis</a>
+    </div>
+  </div>
+
+  <section class="problem">
+    <div class="wrap">
+      <div class="section-label">Le constat</div>
+      <p>
+        Vous y pensez depuis un moment. Un climatiseur se commande, et
+        compter <strong>environ 2 semaines de délai de livraison</strong> —
+        ce n'est pas quelque chose qu'on peut accélérer. Ce qu'on peut faire,
+        en revanche, c'est ne pas perdre de temps sur le reste : devis
+        rapide, pas de rendez-vous repoussé, et une pose rapide dès que le
+        matériel arrive.
+      </p>
+      <p><strong>Plus vous attendez pour commander, plus la chaleur dure.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-label">Comment ça se passe</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num mono">01</div>
+          <div>
+            <h3>Vous appelez</h3>
+            <p>Vous parlez directement à Andy — pas à un standard téléphonique.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num mono">02</div>
+          <div>
+            <h3>Devis gratuit sous 24-48h</h3>
+            <p>Évaluation de votre besoin selon votre logement, sans engagement. Modèle préchargé, prêt à poser.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num mono">03</div>
+          <div>
+            <h3>Commande (environ 2 semaines) puis pose rapide</h3>
+            <p>Dès réception du matériel, installation et mise en service — électricité gérée par la même équipe si besoin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-label">Ce qu'en disent nos clients</div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>Pas de mauvaise surprise, le prix convenu a été respecté et les délais annoncés ont été tenus. Une entreprise honnête et fiable sur laquelle on peut compter !</p>
+        <span class="name">— Roman G., Saint-Drézéry</span>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>Nous avons fait appel à cet artisan pour plusieurs travaux (électricité, plomberie, carrelage), un travail sérieux et soigné.</p>
+        <span class="name">— Françoise C.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="zone">
+    <div class="wrap">
+      <div class="section-label">Zone d'intervention</div>
+      <p>Saint-Drézéry, Montpellier et tout le secteur alentour — Gard et Hérault.</p>
+    </div>
+  </section>
+
+  <section class="contact-final" id="contact">
+    <div class="wrap">
+      <h2>Chaque jour d'attente, c'est un jour de chaleur en plus — la commande, elle, prend déjà 2 semaines.</h2>
+      <a href="tel:0604515694" class="phone">06 04 51 56 94</a>
+      <a href="mailto:Andy_sauton@yahoo.com" class="btn btn-ghost">Écrire un email</a>
+    </div>
+  </section>
+
+  <div class="call-bar">
+    <a href="tel:0604515694">📞 06 04 51 56 94 — Devis gratuit</a>
+  </div>
+
+</body>
+</html>
